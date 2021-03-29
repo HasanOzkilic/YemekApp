@@ -1,0 +1,62 @@
+
+
+.filterName>span{
+    font-size: 20px;
+    color: gray;
+    font-weight: 500;
+}
+
+.filterName{
+    margin-top: 20px;
+}
+
+.shortType{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+.shortType>div{
+    
+    margin-top: 10px;
+
+}
+.filters{
+  
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    
+  
+  }
+
+.shortType>div>label{
+    
+  font-size: 17px;
+  font-weight: 350;
+
+}
+
+.rangebar{
+
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    margin-top: 10px;
+}
+.min,.max
+{
+    margin-left: 3px;
+    margin-right: 6px;
+}
+
+.slider{
+    width: 200px;
+}
+
+.searchKitchen{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
