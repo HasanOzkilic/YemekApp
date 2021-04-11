@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-   public  class EfRestaurantDal:EfEntityRepositoryBase<SqlContext , Restaurant>, IRestaurantDal
+   public  class EfRestaurantDal:EfEntityRepositoryBase<Restaurant, SqlContext>, IRestaurantDal
     {
     }
 }

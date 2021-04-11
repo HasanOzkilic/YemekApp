@@ -17,9 +17,23 @@ namespace Business.Concrete
         {
             _productDal = productDal;
         }
-        public IDataResult<Product> Get(int productId)
+
+        public IResult Add(Product entity)
         {
-            var result=_productDal.Get(product => product.ProductId == productId);
+            _productDal.Add(entity);
+            return new SuccessResult();
+        }
+
+        public IResult Delete(Product entity)
+        {
+
+            _productDal.Delete(entity);
+            return new SuccessResult();
+        }
+
+        public IDataResult<Product> Get(int id)
+        {
+            var result=_productDal.Get(product => product.ProductId == id);
            return  new SuccessDataResult<Product>(result, Messages.ProductFound);
         }
 
@@ -28,6 +42,12 @@ namespace Business.Concrete
         {
             var result = _productDal.GetAllWithFilter();
             return new SuccessDataResult<List<Product>>(result, Messages.ProductsListed);
+        }
+
+        public IResult Update(Product entity)
+        {
+            _productDal.Update(entity);
+            return new SuccessResult();
         }
     }
 }

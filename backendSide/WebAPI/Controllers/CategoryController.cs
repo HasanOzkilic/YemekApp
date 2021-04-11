@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,18 +10,17 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class CategoryController : ControllerBase
     {
-        IProductService _productService;
-        public ProductsController(IProductService productService)
+        ICategoryService _categoryService;
+        public CategoryController(ICategoryService categoryService)
         {
-            _productService = productService;
+            _categoryService = categoryService;
         }
         [HttpGet("getall")]
-
         public IActionResult GetAll()
         {
-            var result =_productService.GetAll();
+            var result = _categoryService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -32,47 +30,44 @@ namespace WebAPI.Controllers
         [HttpGet("get")]
         public IActionResult Get(int id)
         {
-            var result = _productService.Get(id);
+            var result = _categoryService.Get(id);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
-
         }
         [HttpGet("add")]
-        public IActionResult Add(Product product)
+        public IActionResult Add(Category category)
         {
-            var result = _productService.Add(product);
+            var result = _categoryService.Add(category);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
-
         }
         [HttpGet("delete")]
-        public IActionResult Delete(Product product)
+        public IActionResult Delete(Category category)
         {
-            var result = _productService.Delete(product);
+            var result = _categoryService.Delete(category);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
-
         }
         [HttpGet("update")]
-        public IActionResult Update(Product product)
+        public IActionResult Update(Category category)
         {
-            var result = _productService.Update(product);
+            var result = _categoryService.Update(category);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
-
         }
+
 
 
     }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-   public class EfCategoryDal:EfEntityRepositoryBase<SqlContext ,Category>,ICategoryDal
+   public class EfCategoryDal:EfEntityRepositoryBase<Category, SqlContext>,ICategoryDal
     {
     }
 }

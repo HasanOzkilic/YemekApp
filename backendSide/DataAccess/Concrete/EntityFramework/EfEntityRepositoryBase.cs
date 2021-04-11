@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfEntityRepositoryBase<TContext, TEntity> : IEntityRepository<TEntity>
+    public class EfEntityRepositoryBase< TEntity,TContext> : IEntityRepository<TEntity>
         where TContext : DbContext, new()
         where TEntity : class, IEntity , new()
     {
@@ -35,6 +35,33 @@ namespace DataAccess.Concrete.EntityFramework
 
             }
 
+        }
+        public void Add(TEntity entity)
+        {
+            using (TContext context = new TContext())
+            {
+                var result= context.Entry(entity);
+                result.State = EntityState.Added;
+                context.SaveChanges();
+            }
+        }
+        public void Delete(TEntity entity)
+        {
+            using (TContext context = new TContext())
+            {
+                var result = context.Entry(entity);
+                result.State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+        }
+        public void Update(TEntity entity)
+        {
+            using (TContext context = new TContext())
+            {
+                var result = context.Entry(entity);
+                result.State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
     }
 

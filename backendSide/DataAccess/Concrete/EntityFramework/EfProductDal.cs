@@ -8,11 +8,11 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-   public class EfProductDal : EfEntityRepositoryBase<SqlContext, Product>, IProductDal
+   public class EfProductDal : EfEntityRepositoryBase<Product, SqlContext>, IProductDal
     {
         public List<ProductDetailDto> GetProductDetails()
         {
-            throw new NotImplementedException();
+          throw new  Exception();
         }
     }
 }

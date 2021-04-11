@@ -6,10 +6,8 @@ using System.Text;
 
 namespace Business.Abstract
 {
-    public interface IProductService
+    public interface IProductService:IEntityBusinessRepository<Product>
     {
-        IDataResult<List<Product>> GetAll();
-        IDataResult<Product> Get(int productId);
-
+       
     }
 }
