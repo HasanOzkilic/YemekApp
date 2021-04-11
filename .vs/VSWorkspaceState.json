@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backendSide",
+    "\\backendSide\\Entities",
+    "\\backendSide\\Entities\\Abstract",
+    "\\YemekApp",
+    "\\YemekApp\\yemek-app"
+  ],
+  "SelectedNode": "\\backendSide\\Entities\\Abstract\\IEntity.cs",
+  "PreviewInSolutionExplorer": false
+}
